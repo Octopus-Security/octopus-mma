@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "MMA Reference | OctopusTechnology",
   description:
     "Comprehensive martial arts reference — Taekwondo, BJJ, Karate, Tai Chi, Muay Thai, and more. Belt-level curriculum with diagrams for every technique.",
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({
