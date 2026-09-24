@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# octopus-mma
 
-## Getting Started
+A martial arts technique reference — belt-level curricula with an animated
+stick-figure diagram for every technique. Live at
+[mma.octopustechnology.net](https://mma.octopustechnology.net).
 
-First, run the development server:
+Next.js 14 (App Router, TypeScript, Tailwind), built to a Docker image and
+served behind Nginx Proxy Manager on the estate's `web_proxy` network.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What it does
+
+Techniques are organised by **discipline → belt level → technique**. Ten
+disciplines are modelled in `lib/types.ts` (Taekwondo, BJJ, Karate, Tai Chi,
+Muay Thai, Boxing, Wrestling, Judo, Kung Fu, Krav Maga); four of them currently
+have written content:
+
+| Discipline | Techniques | Animated |
+|---|---|---|
+| Taekwondo | 15 | 15 |
+| Boxing | 7 | 7 |
+| BJJ | 5 | 5 |
+| Karate | 5 | 5 |
+
+The remaining six have routes and metadata but no technique files yet, so they
+render as empty rather than 404 — the content layer is the gap, not the code.
+
+## The interesting part: pose animation
+
+Rather than shipping video or GIFs of a real person, each technique can carry a
+`.poses.json` file next to its markdown describing keyframes for an SVG stick
+figure. `lib/poses.ts` interpolates between frames and
+`components/technique/StickFigure.tsx` renders them.
+
+This was a deliberate trade. Diagrams stay legible at any size, weigh almost
+nothing, need no filming, and can be corrected by editing a number — and they
+sidestep the licensing problem that comes with instructional footage.
+
+Two conventions worth knowing before authoring one:
+
+- **`viewBox="0 0 100 110"`** is the coordinate space.
+- **`nearSide`** decides which way the figure faces, and which limbs read as
+  near or far: `"L"` (the default) faces right, drawing left joints bright and
+  right joints dark; `"R"` faces left and is used for an opponent figure. Depth
+  is carried entirely by that contrast, so getting it backwards makes the
+  figure look inside-out.
+
+A `highlight` array colours joints red for the moment of contact. Strikes tend
+to work in five frames: stance → chamber → extension (highlighted) → retract →
+return. `content/taekwondo/white-belt/front-kick.poses.json` is the reference
+implementation.
+
+### Pose editor
+
+`/tools/pose-editor` is a drag-to-edit authoring tool for these files — it beats
+hand-writing coordinates. It sits behind a cookie check in `middleware.ts`; the
+reference site itself is fully public and unauthenticated.
+
+## Adding a technique
+
+1. Create `content/<discipline>/<belt>/<slug>.md` with frontmatter matching
+   `TechniqueFrontmatter` in `lib/types.ts`.
+2. Optionally add `<slug>.poses.json` beside it for the animation.
+
+Belt levels per discipline are defined in `lib/types.ts` — a belt not listed
+there has no route, so add it there first.
+
+## Development
+
+```sh
+npm install
+npm run dev      # http://localhost:3000
+npm test         # node --test: content integrity + build stamp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run build` generates GIF fallbacks before `next build`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The content tests parse every markdown file and validate its frontmatter, so a
+malformed technique fails the suite rather than the page.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
+Pushing to `main` deploys — Portainer polls the repo and rebuilds. There is no
+manual step, so a broken build ships as a broken build.
 
-To learn more about Next.js, take a look at the following resources:
+`/api/build` returns a content-derived stamp answering *"did my push actually
+land"*, which is an estate-wide convention: a deploy that never happened and one
+that happened without helping look identical from the outside otherwise.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+curl -s https://mma.octopustechnology.net/api/build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`/api/health` is the liveness probe.
 
-## Deploy on Vercel
+## Layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/                    routes — [discipline]/[beltLevel], search, tools, api
+components/technique/   StickFigure, DiagramViewer, usePoseAnimation
+content/                markdown + .poses.json, the whole content layer
+lib/types.ts            disciplines, belt orders, frontmatter shape
+lib/poses.ts            pose format and interpolation
+test/                   content integrity, build stamp
+```
