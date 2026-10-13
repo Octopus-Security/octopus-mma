@@ -18,7 +18,15 @@ export const metadata: Metadata = {
   title: "MMA Reference | OctopusTechnology",
   description:
     "Comprehensive martial arts reference — Taekwondo, BJJ, Karate, Tai Chi, Muay Thai, and more. Belt-level curriculum with diagrams for every technique.",
-  icons: { icon: "/favicon.svg" },
+  icons: {
+    icon: "https://auth.octopustechnology.net/brand/mma/favicon.svg",
+    apple: "https://auth.octopustechnology.net/brand/mma/apple-touch-icon.png",
+  },
+  // Next's metadata API has no way to set crossorigin="use-credentials" on the
+  // generated <link rel="manifest">, unlike the literal three-line block every
+  // other app pastes verbatim (FAVICON-PACK-SPEC.md §5) — this is the one
+  // attribute lost by going through Metadata instead of raw <link> tags.
+  manifest: "https://auth.octopustechnology.net/brand/mma/site.webmanifest",
 };
 
 export default function RootLayout({
