@@ -10,7 +10,7 @@ function UnlockForm() {
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const params = useSearchParams();
-  const from   = params.get("from") ?? "/tools/pose-editor";
+  const from   = params.get("from") ?? "/";
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();

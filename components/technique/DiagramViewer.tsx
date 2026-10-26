@@ -3,17 +3,11 @@
 import { useState } from "react";
 import StickFigure from "./StickFigure";
 import { usePoseAnimation } from "./usePoseAnimation";
-import { type PoseData, NEUTRAL_STANCE } from "@/lib/poses";
+import type { PoseData } from "@/lib/poses";
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
 const SPEEDS = [0.25, 0.5, 1, 2] as const;
-
-const EMPTY: PoseData = {
-  title: "",
-  loop: true,
-  frames: [{ duration: 1000, joints: NEUTRAL_STANCE }],
-};
 
 // ─── Icons ───────────────────────────────────────────────────────────────────
 
@@ -57,7 +51,7 @@ function IconFlip() {
 }
 
 export default function DiagramViewer({ poses }: { poses: PoseData }) {
-  const anim = usePoseAnimation(poses ?? EMPTY);
+  const anim = usePoseAnimation(poses);
   const [flipped, setFlipped] = useState(false);
 
   return (
@@ -69,21 +63,16 @@ export default function DiagramViewer({ poses }: { poses: PoseData }) {
         style={{ background: "linear-gradient(180deg, #111 0%, #1e1e1e 100%)" }}
       >
         <StickFigure
-          joints={anim.joints}
-          highlightJoints={anim.highlightJoints}
-          handShape={poses.frames[anim.frameIndex]?.handShape}
-          opponentJoints={anim.opponentJoints}
-          opponentHighlight={anim.opponentHighlight}
-          opponentHandShape={poses.frames[anim.frameIndex]?.opponentHandShape}
-          opponentOnTop={poses.opponentOnTop}
-          className={`w-48 h-auto drop-shadow-lg${flipped ? " [transform:scaleX(-1)]" : ""}`}
+          html={anim.html}
+          label={poses.title}
+          className={`w-56 h-auto drop-shadow-lg${flipped ? " [transform:scaleX(-1)]" : ""}`}
         />
       </div>
 
       {/* ── Frame label ── */}
       <div className="px-4 py-2 text-center border-t border-brand-border/60">
         <span className="text-sm font-medium text-white">{anim.frameLabel}</span>
-        {anim.opponentJoints && (
+        {anim.hasPartner && (
           <span className="ml-2 text-[10px] text-[#5090c8] opacity-70">· partner shown</span>
         )}
       </div>
