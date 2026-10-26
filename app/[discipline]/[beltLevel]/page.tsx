@@ -4,7 +4,7 @@ import { BELT_LEVELS, BELT_COLORS, DISCIPLINE_META, type Discipline } from "@/li
 import { getTechniquesByDisciplineAndBelt } from "@/lib/content";
 
 interface Props {
-  params: { discipline: string; beltLevel: string };
+  params: Promise<{ discipline: string; beltLevel: string }>;
 }
 
 export function generateStaticParams() {
@@ -13,9 +13,10 @@ export function generateStaticParams() {
   );
 }
 
-export default function BeltLevelPage({ params }: Props) {
-  const discipline = params.discipline as Discipline;
-  const { beltLevel } = params;
+export default async function BeltLevelPage({ params }: Props) {
+  const resolved = await params;
+  const discipline = resolved.discipline as Discipline;
+  const { beltLevel } = resolved;
   const meta = DISCIPLINE_META[discipline];
   if (!meta) notFound();
   if (!BELT_LEVELS[discipline]?.includes(beltLevel)) notFound();

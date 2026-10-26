@@ -6,16 +6,17 @@ import DiagramViewer from "@/components/technique/DiagramViewer";
 import DownloadCard from "@/components/technique/DownloadCard";
 
 interface Props {
-  params: { discipline: string; beltLevel: string; slug: string };
+  params: Promise<{ discipline: string; beltLevel: string; slug: string }>;
 }
 
 export function generateStaticParams() {
   return getAllTechniqueSlugs();
 }
 
-export default function TechniquePage({ params }: Props) {
-  const discipline = params.discipline as Discipline;
-  const { beltLevel, slug } = params;
+export default async function TechniquePage({ params }: Props) {
+  const resolved = await params;
+  const discipline = resolved.discipline as Discipline;
+  const { beltLevel, slug } = resolved;
   const meta = DISCIPLINE_META[discipline];
   if (!meta) notFound();
 
