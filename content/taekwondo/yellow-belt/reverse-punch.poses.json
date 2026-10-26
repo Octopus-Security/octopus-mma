@@ -1,117 +1,17 @@
 {
-  "title": "Reverse Punch (Bandae Jireugi)",
-  "loop": true,
+  "version": 2,
+  "title": "Reverse Punch (Bandae Jirugi)",
+  "view": "side",
+  "anchor": {
+    "joint": "ankleL",
+    "x": 54,
+    "y": 90
+  },
   "frames": [
-    {
-      "duration": 1200,
-      "ease": "ease-in-out",
-      "label": "Fighting Stance",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 54, "y": 21 },
-        "shoulderR": { "x": 42, "y": 21 },
-        "elbowL":    { "x": 60, "y": 30 },
-        "elbowR":    { "x": 36, "y": 30 },
-        "handL":     { "x": 62, "y": 21 },
-        "handR":     { "x": 39, "y": 22 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 55, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    },
-    {
-      "duration": 500,
-      "ease": "ease-out",
-      "label": "Chamber",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 54, "y": 21 },
-        "shoulderR": { "x": 42, "y": 21 },
-        "elbowL":    { "x": 60, "y": 30 },
-        "elbowR":    { "x": 36, "y": 36 },
-        "handL":     { "x": 62, "y": 21 },
-        "handR":     { "x": 34, "y": 51 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 55, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    },
-    {
-      "duration": 280,
-      "ease": "ease-in-out",
-      "label": "Punch",
-      "highlight": ["elbowR", "handR"],
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 49, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 45, "y": 21 },
-        "elbowL":    { "x": 58, "y": 34 },
-        "elbowR":    { "x": 53, "y": 29 },
-        "handL":     { "x": 56, "y": 50 },
-        "handR":     { "x": 68, "y": 24 },
-        "hipL":      { "x": 50, "y": 52 },
-        "hipR":      { "x": 48, "y": 52 },
-        "kneeL":     { "x": 54, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    },
-    {
-      "duration": 350,
-      "ease": "ease-in",
-      "label": "Retract",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 54, "y": 21 },
-        "shoulderR": { "x": 42, "y": 21 },
-        "elbowL":    { "x": 60, "y": 30 },
-        "elbowR":    { "x": 36, "y": 36 },
-        "handL":     { "x": 62, "y": 21 },
-        "handR":     { "x": 34, "y": 51 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 55, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    },
-    {
-      "duration": 800,
-      "ease": "ease-in-out",
-      "label": "Return",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 54, "y": 21 },
-        "shoulderR": { "x": 42, "y": 21 },
-        "elbowL":    { "x": 60, "y": 30 },
-        "elbowR":    { "x": 36, "y": 30 },
-        "handL":     { "x": 62, "y": 21 },
-        "handR":     { "x": 39, "y": 22 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 55, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    }
+    {"duration":700,"label":"Walking stance: right fist at the hip","highlight":[],"pose":{"thighL":28,"shinL":-6,"footL":90,"thighR":-20.5,"shinR":-20.5,"footR":90,"torso":180,"head":180,"upperArmL":90,"forearmL":90,"upperArmR":-20,"forearmR":55}},
+    {"duration":220,"label":"Hips rotate: right hip drives forward","highlight":["hipR","spine"],"pose":{"torso":177,"head":178,"upperArmL":40,"forearmL":110,"upperArmR":30,"forearmR":100}},
+    {"duration":170,"label":"Punch: left fist pulls back to the hip","highlight":["shoulderR","elbowR","hand","hipR"],"pose":{"torso":172,"head":174,"upperArmL":-20,"forearmL":55,"upperArmR":90,"forearmR":90}},
+    {"duration":220,"label":"Hold: lock the whole body at the moment of contact","highlight":["shoulderR","elbowR","hand"],"pose":{"torso":172}},
+    {"duration":280,"label":"Retract the fist to the hip","highlight":[],"pose":{"torso":177,"head":178,"upperArmL":40,"forearmL":110,"upperArmR":30,"forearmR":100}}
   ]
 }

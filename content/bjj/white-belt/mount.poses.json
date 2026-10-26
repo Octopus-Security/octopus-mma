@@ -1,88 +1,10 @@
 {
-  "title": "Mount Position",
-  "loop": true,
+  "version": 2,
+  "title": "Mount",
+  "view": "side",
   "frames": [
-    {
-      "duration": 2200,
-      "ease": "ease-in-out",
-      "label": "Low Mount",
-      "highlight": ["hipL", "hipR", "kneeL", "kneeR"],
-      "opponentHighlight": ["spine"],
-      "joints": {
-        "head":      { "x": 50, "y": 10 },
-        "neck":      { "x": 50, "y": 20 },
-        "spine":     { "x": 50, "y": 58 },
-        "shoulderL": { "x": 44, "y": 22 },
-        "shoulderR": { "x": 56, "y": 22 },
-        "elbowL":    { "x": 36, "y": 34 },
-        "elbowR":    { "x": 64, "y": 34 },
-        "handL":     { "x": 30, "y": 46 },
-        "handR":     { "x": 70, "y": 46 },
-        "hipL":      { "x": 46, "y": 58 },
-        "hipR":      { "x": 54, "y": 58 },
-        "kneeL":     { "x": 34, "y": 72 },
-        "kneeR":     { "x": 66, "y": 72 },
-        "footL":     { "x": 28, "y": 82 },
-        "footR":     { "x": 72, "y": 82 }
-      },
-      "opponentJoints": {
-        "head":      { "x": 15, "y": 62 },
-        "neck":      { "x": 24, "y": 62 },
-        "spine":     { "x": 62, "y": 64 },
-        "shoulderL": { "x": 24, "y": 58 },
-        "shoulderR": { "x": 26, "y": 68 },
-        "elbowL":    { "x": 14, "y": 54 },
-        "elbowR":    { "x": 16, "y": 74 },
-        "handL":     { "x":  8, "y": 50 },
-        "handR":     { "x": 10, "y": 78 },
-        "hipL":      { "x": 70, "y": 60 },
-        "hipR":      { "x": 72, "y": 68 },
-        "kneeL":     { "x": 82, "y": 57 },
-        "kneeR":     { "x": 84, "y": 71 },
-        "footL":     { "x": 92, "y": 55 },
-        "footR":     { "x": 93, "y": 73 }
-      }
-    },
-    {
-      "duration": 2200,
-      "ease": "ease-in-out",
-      "label": "High Mount",
-      "highlight": ["hipL", "hipR", "kneeL", "kneeR"],
-      "opponentHighlight": ["shoulderL", "shoulderR"],
-      "joints": {
-        "head":      { "x": 46, "y": 6  },
-        "neck":      { "x": 46, "y": 16 },
-        "spine":     { "x": 46, "y": 50 },
-        "shoulderL": { "x": 40, "y": 18 },
-        "shoulderR": { "x": 52, "y": 18 },
-        "elbowL":    { "x": 32, "y": 30 },
-        "elbowR":    { "x": 60, "y": 30 },
-        "handL":     { "x": 24, "y": 42 },
-        "handR":     { "x": 68, "y": 42 },
-        "hipL":      { "x": 42, "y": 50 },
-        "hipR":      { "x": 50, "y": 50 },
-        "kneeL":     { "x": 28, "y": 62 },
-        "kneeR":     { "x": 62, "y": 62 },
-        "footL":     { "x": 22, "y": 74 },
-        "footR":     { "x": 68, "y": 74 }
-      },
-      "opponentJoints": {
-        "head":      { "x": 15, "y": 62 },
-        "neck":      { "x": 24, "y": 62 },
-        "spine":     { "x": 62, "y": 64 },
-        "shoulderL": { "x": 24, "y": 58 },
-        "shoulderR": { "x": 26, "y": 68 },
-        "elbowL":    { "x": 14, "y": 54 },
-        "elbowR":    { "x": 16, "y": 74 },
-        "handL":     { "x":  8, "y": 50 },
-        "handR":     { "x": 10, "y": 78 },
-        "hipL":      { "x": 70, "y": 60 },
-        "hipR":      { "x": 72, "y": 68 },
-        "kneeL":     { "x": 82, "y": 57 },
-        "kneeR":     { "x": 84, "y": 71 },
-        "footL":     { "x": 92, "y": 55 },
-        "footR":     { "x": 93, "y": 73 }
-      }
-    }
+    {"duration":1000,"label":"Sit on the chest: knees pinched to their ribs","highlight":["hipL","hipR","kneeL","kneeR"],"pose":{"torso":168,"head":170,"upperArmL":-31.8,"forearmL":-13.8,"upperArmR":-40.2,"forearmR":22.9,"thighL":45,"shinL":-90,"footL":-75,"thighR":45,"shinR":-90,"footR":-75,"root":{"x":58,"y":76}},"partner":{"pose":{"torso":-90,"head":-88,"upperArmL":101.6,"forearmL":-177.2,"upperArmR":97.2,"forearmR":-159.6,"thighL":140,"shinL":70,"footL":150,"thighR":125,"shinR":55,"footR":140,"root":{"x":60,"y":87}},"highlight":[]}},
+    {"duration":1000,"label":"Low mount: drop the chest, grips on the head and arms","highlight":["hipL","hipR","spine"],"pose":{"torso":125,"head":140,"upperArmL":-39.7,"forearmL":12.4,"upperArmR":-25.7,"forearmR":12.1,"thighL":45,"shinL":-90,"footL":-75,"thighR":45,"shinR":-90,"footR":-75,"root":{"x":58,"y":76}},"partner":{"pose":{"torso":-90,"head":-88,"upperArmL":77.7,"forearmL":-160.6,"upperArmR":75.3,"forearmR":-147.6,"thighL":135,"shinL":70,"footL":150,"thighR":125,"shinR":55,"footR":140,"root":{"x":60,"y":87}},"highlight":[]}},
+    {"duration":900,"label":"Slide up the chest (high mount)","highlight":["hipL","hipR","kneeL","kneeR"],"pose":{"torso":150,"head":160,"upperArmL":-3.1,"forearmL":-0.5,"upperArmR":0.1,"forearmR":2.6,"thighL":45,"shinL":-90,"footL":-75,"thighR":45,"shinR":-90,"footR":-75,"root":{"x":66,"y":76}},"partner":{"pose":{"torso":-90,"head":-88,"upperArmL":77.7,"forearmL":-160.6,"upperArmR":75.3,"forearmR":-147.6,"thighL":135,"shinL":70,"footL":150,"thighR":125,"shinR":55,"footR":140,"root":{"x":60,"y":87}},"highlight":[]}}
   ]
 }

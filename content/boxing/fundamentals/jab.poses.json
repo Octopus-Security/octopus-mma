@@ -1,95 +1,17 @@
 {
+  "version": 2,
   "title": "Jab",
-  "loop": true,
+  "view": "side",
+  "anchor": {
+    "joint": "ankleL",
+    "x": 56,
+    "y": 90
+  },
   "frames": [
-    {
-      "duration": 1200,
-      "ease": "ease-in-out",
-      "label": "Guard",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 54, "y": 21 },
-        "shoulderR": { "x": 42, "y": 21 },
-        "elbowL":    { "x": 58, "y": 28 },
-        "elbowR":    { "x": 40, "y": 26 },
-        "handL":     { "x": 62, "y": 20 },
-        "handR":     { "x": 44, "y": 18 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 55, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    },
-    {
-      "duration": 300,
-      "ease": "ease-out",
-      "label": "Extension",
-      "highlight": ["handL", "elbowL"],
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 58, "y": 20 },
-        "shoulderR": { "x": 42, "y": 21 },
-        "elbowL":    { "x": 72, "y": 19 },
-        "elbowR":    { "x": 40, "y": 26 },
-        "handL":     { "x": 84, "y": 18 },
-        "handR":     { "x": 44, "y": 18 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 55, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    },
-    {
-      "duration": 300,
-      "ease": "ease-in",
-      "label": "Retract",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 55, "y": 21 },
-        "shoulderR": { "x": 42, "y": 21 },
-        "elbowL":    { "x": 60, "y": 26 },
-        "elbowR":    { "x": 40, "y": 26 },
-        "handL":     { "x": 64, "y": 20 },
-        "handR":     { "x": 44, "y": 18 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 55, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    },
-    {
-      "duration": 800,
-      "ease": "ease-in-out",
-      "label": "Return to Guard",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 54, "y": 21 },
-        "shoulderR": { "x": 42, "y": 21 },
-        "elbowL":    { "x": 58, "y": 28 },
-        "elbowR":    { "x": 40, "y": 26 },
-        "handL":     { "x": 62, "y": 20 },
-        "handR":     { "x": 44, "y": 18 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 55, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    }
+    {"duration":450,"label":"Guard","pose":{"torso":172,"head":172,"upperArmL":30,"forearmL":160,"upperArmR":20,"forearmR":165,"thighL":12,"shinL":-4,"footL":90,"thighR":-22,"shinR":-20,"footR":70}},
+    {"duration":170,"label":"Jab: snap the lead hand straight out","highlight":["shoulderL","elbowL","hand"],"pose":{"torso":168,"head":168,"upperArmL":90,"forearmL":92,"thighL":16,"shinL":-6}},
+    {"duration":150,"label":"Hold at full reach","highlight":["shoulderL","elbowL","hand"],"pose":{"torso":167,"head":167}},
+    {"duration":230,"label":"Snap back to the cheek","highlight":[],"pose":{"torso":172,"head":172,"upperArmL":30,"forearmL":160,"thighL":12,"shinL":-4}},
+    {"duration":350,"label":"Guard","pose":{"torso":172,"head":172,"upperArmL":30,"forearmL":160,"upperArmR":20,"forearmR":165,"thighL":12,"shinL":-4,"footL":90,"thighR":-22,"shinR":-20,"footR":70}}
   ]
 }

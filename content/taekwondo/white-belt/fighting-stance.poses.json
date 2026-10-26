@@ -1,50 +1,19 @@
 {
-  "title": "Fighting Stance (Gyeorugi Seogi)",
-  "loop": true,
+  "version": 2,
+  "title": "Fighting Stance (Gyorugi Junbi)",
+  "view": "side",
+  "anchor": {
+    "joint": "ankleL",
+    "x": 52,
+    "y": 90
+  },
+  "highlight": [
+    "kneeL",
+    "kneeR"
+  ],
   "frames": [
-    {
-      "duration": 700,
-      "ease": "ease-in-out",
-      "label": "Guard",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 54, "y": 21 },
-        "shoulderR": { "x": 42, "y": 21 },
-        "elbowL":    { "x": 60, "y": 30 },
-        "elbowR":    { "x": 36, "y": 30 },
-        "handL":     { "x": 62, "y": 21 },
-        "handR":     { "x": 39, "y": 22 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 55, "y": 70 },
-        "kneeR":     { "x": 40, "y": 70 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    },
-    {
-      "duration": 700,
-      "ease": "ease-in-out",
-      "label": "Weight Shift",
-      "joints": {
-        "head":      { "x": 50, "y": 9  },
-        "neck":      { "x": 49, "y": 16 },
-        "spine":     { "x": 48, "y": 51 },
-        "shoulderL": { "x": 54, "y": 22 },
-        "shoulderR": { "x": 42, "y": 22 },
-        "elbowL":    { "x": 60, "y": 31 },
-        "elbowR":    { "x": 36, "y": 31 },
-        "handL":     { "x": 62, "y": 22 },
-        "handR":     { "x": 39, "y": 23 },
-        "hipL":      { "x": 52, "y": 53 },
-        "hipR":      { "x": 44, "y": 53 },
-        "kneeL":     { "x": 55, "y": 72 },
-        "kneeR":     { "x": 40, "y": 72 },
-        "footL":     { "x": 60, "y": 92 },
-        "footR":     { "x": 34, "y": 92 }
-      }
-    }
+    {"duration":700,"label":"Guard: angled, knees soft, weight 50/50","pose":{"torso":176,"head":176,"upperArmL":40,"forearmL":150,"upperArmR":25,"forearmR":160,"thighL":14,"shinL":-6,"footL":90,"thighR":-20,"shinR":-18,"footR":72}},
+    {"duration":350,"label":"Light on the balls of the feet: weight forward","pose":{"torso":174,"thighL":20,"shinL":-10,"thighR":-24,"shinR":-22,"footR":65,"upperArmL":44,"forearmL":148}},
+    {"duration":350,"label":"Weight back, ready to kick","pose":{"torso":178,"head":178,"thighL":8,"shinL":-2,"thighR":-16,"shinR":-14,"footR":78,"upperArmL":36,"forearmL":152}}
   ]
 }
