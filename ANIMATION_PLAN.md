@@ -7,14 +7,32 @@ Organized by priority: what octopus-health needs first, then MMA depth.
 
 ## FORMAT REFERENCE
 
-Each `.poses.json` has frames with these joints:
-`head, neck, spine, shoulderL/R, elbowL/R, handL/R, hipL/R, kneeL/R, footL/R`
+**Pose files are format v2, a rigid skeleton. Read `docs/POSES.md`; the engine is
+`lib/stick-figure.js` and `validate()` in it is the rule book.** A frame stores the ANGLE of
+each body segment (fixed bone lengths), never joint coordinates, so a limb cannot detach or
+stretch. The old per-joint percentage format (`head, neck, spine, shoulderL/R, ...` with
+x/y per joint, and `opponentJoints`) is gone: do not author in it. A second body for grappling
+is the `partner` block described in the doc.
 
-Each frame can have `"highlight": ["jointName", ...]` for the 2D stick-figure glow.
-Blender pose assets carry `hl_color_1..6` custom props for the écorché muscle highlight.
+Each `.poses.json` sits next to its `.md`. Check with `node scripts/poses.mjs` and LOOK at
+`node scripts/poses.mjs --sheet out.png <slug>`. `test/poses.test.js` runs every file through
+the rules and fails if a technique page has no valid animation.
 
-Coordinates: percentage of canvas (0–100), origin top-left.
-Orthodox stance = right-handed fighter facing right (footL=front).
+Highlights are v2 names (`kneeL`, `hand`, `spine`, `ankleR`...), which the renderer colours red
+on that frame. Blender pose assets still carry `hl_color_1..6` custom props for the
+ecorche muscle highlight (see below); that is separate from the 2D figure.
+
+Orthodox stance = right-handed fighter facing right; `L` is the lead (near) side, `R` the rear.
+
+### Known approximations (2D side view)
+
+- Hooks, slips and weaves move across the body; shown as lean, dip and elbow height.
+- Side kick and roundhouse: the hip turn is shown as backward lean and leg height, not a turn.
+- TKD back stance and attention stance: the 90-degree rear foot and the V of the feet point
+  toward the camera and are not drawn.
+- Side control is shown chest-on-chest (the real position is a perpendicular T, unreadable from
+  the side). Armbar and triangle overlap the two bodies more than a photo would.
+- Techniques without a page yet (back kick, axe kick, poomsae) have no pose; add the page, then the pose.
 
 ---
 

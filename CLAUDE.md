@@ -7,9 +7,8 @@ A martial arts reference site at `mma.octopustechnology.net`. Next.js 14 (App Ro
 The foundation is complete and deployed:
 - Dark martial arts theme, 10 discipline routes
 - File-based content from `content/<discipline>/<belt>/` — markdown with frontmatter for technique pages
-- SVG stick figure animation system — `lib/poses.ts`, `components/technique/StickFigure.tsx`, `components/technique/usePoseAnimation.ts`, `components/technique/DiagramViewer.tsx`
-- 3 sample techniques live (TKD white belt): `front-kick`, `low-block`, `walking-stance`
-- `front-kick.poses.json` is the reference for how to author animations
+- SVG stick figure animation system, format v2 (rigid skeleton: segment angles, fixed bone lengths) — engine `lib/stick-figure.js`, format and rules in `docs/POSES.md`, viewer `components/technique/DiagramViewer.tsx` (+ `StickFigure.tsx`, `usePoseAnimation.ts`)
+- Every technique page has a `.poses.json`; `node scripts/poses.mjs` validates, `--sheet out.png` renders a contact sheet to look at, `test/poses.test.js` enforces it
 
 ## What to work on next
 
@@ -22,26 +21,21 @@ Write MDX files for all remaining techniques per the project plan. Start with:
 
 Each technique needs:
 - A `.md` file in `content/<discipline>/<belt>/<slug>.md` with frontmatter matching `TechniqueFrontmatter` in `lib/types.ts`
-- Optionally a `.poses.json` alongside it for animation (see `front-kick.poses.json` as the template)
+- A `.poses.json` alongside it for animation (see `jab.poses.json` or `front-kick.poses.json`); a test fails without one
 
 ### Priority 2 — Pose animations
-Add `.poses.json` files for each technique. The format is defined in `lib/poses.ts`.
+Add `.poses.json` files for each technique. The format is defined in `docs/POSES.md` (v2, angles not coordinates).
 
-Key conventions:
-- `viewBox="0 0 100 110"` coordinate space
-- `nearSide="L"` (default) = figure faces RIGHT — L joints are bright warm (`#d4cfc8`), R joints are dark cool (`#3c3c52`)
-- `nearSide="R"` = figure faces LEFT (used for partner/opponent figure)
-- `highlight` array in a frame colours those joints red — use for striking limb at point of contact
-- 5-frame pattern works well for strikes: Stance → Chamber → Extension (highlight) → Retract → Return
+Key conventions (details in `docs/POSES.md`):
+- Angles per body segment, not coordinates; side view faces RIGHT, `L` is the near (bright) lead side, `R` the rear
+- A frame's `partner` block draws a second, mirrored (facing left) blue figure for grappling
+- `highlight` names (`kneeL`, `hand`, `spine`...) colour the working limb red at the point of contact
+- 5-frame pattern works well for strikes: Stance, Chamber, Extension (highlight), Retract, Return
+- Look at `node scripts/poses.mjs --sheet out.png <slug>` before calling a pose done
 
 ### Priority 3 — Pose editor UI
-A drag-to-edit pose authoring tool would massively speed up creating pose JSON files. Rough spec:
-- Route: `/tools/pose-editor`
-- Live `StickFigure` preview in the centre
-- Drag joint dots to reposition them
-- JSON output panel that updates in real time (copy-paste into `.poses.json`)
-- Load existing pose file for editing
-- "Add frame / duplicate frame" controls
+The old drag-the-joints editor was removed with the v1 format (it could produce detached limbs). A new
+editor would have to edit segment angles; until then, author JSON and check it with the contact sheet.
 
 ### Priority 4 — Search
 `app/search/page.tsx` exists as a route but has no content yet. Needs a client-side search across all technique frontmatter using Fuse.js.
