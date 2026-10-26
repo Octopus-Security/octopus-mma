@@ -24,6 +24,8 @@ export interface PoseFrameV2 {
   highlight?: string[];
   pose: Partial<PoseAngles>;
   partner?: PartnerFrame;
+  /** Two-figure frames: main-figure joint/bone `a` must be within `tol` (default 9) of partner joint/bone `b`. */
+  contacts?: Array<{ a: string; b: string; tol?: number }>;
 }
 export interface PoseDataV2 {
   version: 2;
@@ -41,6 +43,7 @@ export interface PoseDataV2 {
 }
 export interface Timeline {
   total: number;
+  viewBox: string;
   frames: Array<{ duration: number; label?: string }>;
   at(ms: number): { html: string; label: string; index: number };
 }
@@ -48,12 +51,13 @@ export function validate(data: unknown): string[];
 export function timeline(data: PoseDataV2): Timeline;
 export function svgFor(data: PoseDataV2, frameIndex?: number, t?: number): string;
 export const VIEWBOX: string;
+export function viewBoxFor(data: PoseDataV2): string;
 export const ANGLES: string[];
 export const LEN: Record<string, number>;
 export const FLOOR_Y: number;
 declare const SF: {
   validate: typeof validate; timeline: typeof timeline; svgFor: typeof svgFor;
-  VIEWBOX: string; ANGLES: string[]; LEN: Record<string, number>; FLOOR_Y: number;
+  VIEWBOX: string; viewBoxFor: typeof viewBoxFor; ANGLES: string[]; LEN: Record<string, number>; FLOOR_Y: number;
   [k: string]: unknown;
 };
 export default SF;

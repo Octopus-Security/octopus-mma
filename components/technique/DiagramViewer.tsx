@@ -64,8 +64,9 @@ export default function DiagramViewer({ poses }: { poses: PoseData }) {
       >
         <StickFigure
           html={anim.html}
+          viewBox={anim.viewBox}
           label={poses.title}
-          className={`w-56 h-auto drop-shadow-lg${flipped ? " [transform:scaleX(-1)]" : ""}`}
+          className={`${anim.hasPartner ? "w-full max-w-md" : "w-56"} h-auto drop-shadow-lg${flipped ? " [transform:scaleX(-1)]" : ""}`}
         />
       </div>
 

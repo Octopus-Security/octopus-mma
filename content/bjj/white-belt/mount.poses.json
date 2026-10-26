@@ -2,9 +2,8 @@
   "version": 2,
   "title": "Mount",
   "view": "side",
+  "static": true,
   "frames": [
-    {"duration":1000,"label":"Sit on the chest: knees pinched to their ribs","highlight":["hipL","hipR","kneeL","kneeR"],"pose":{"torso":168,"head":170,"upperArmL":-31.8,"forearmL":-13.8,"upperArmR":-40.2,"forearmR":22.9,"thighL":45,"shinL":-90,"footL":-75,"thighR":45,"shinR":-90,"footR":-75,"root":{"x":58,"y":76}},"partner":{"pose":{"torso":-90,"head":-88,"upperArmL":101.6,"forearmL":-177.2,"upperArmR":97.2,"forearmR":-159.6,"thighL":140,"shinL":70,"footL":150,"thighR":125,"shinR":55,"footR":140,"root":{"x":60,"y":87}},"highlight":[]}},
-    {"duration":1000,"label":"Low mount: drop the chest, grips on the head and arms","highlight":["hipL","hipR","spine"],"pose":{"torso":125,"head":140,"upperArmL":-39.7,"forearmL":12.4,"upperArmR":-25.7,"forearmR":12.1,"thighL":45,"shinL":-90,"footL":-75,"thighR":45,"shinR":-90,"footR":-75,"root":{"x":58,"y":76}},"partner":{"pose":{"torso":-90,"head":-88,"upperArmL":77.7,"forearmL":-160.6,"upperArmR":75.3,"forearmR":-147.6,"thighL":135,"shinL":70,"footL":150,"thighR":125,"shinR":55,"footR":140,"root":{"x":60,"y":87}},"highlight":[]}},
-    {"duration":900,"label":"Slide up the chest (high mount)","highlight":["hipL","hipR","kneeL","kneeR"],"pose":{"torso":150,"head":160,"upperArmL":-3.1,"forearmL":-0.5,"upperArmR":0.1,"forearmR":2.6,"thighL":45,"shinL":-90,"footL":-75,"thighR":45,"shinR":-90,"footR":-75,"root":{"x":66,"y":76}},"partner":{"pose":{"torso":-90,"head":-88,"upperArmL":77.7,"forearmL":-160.6,"upperArmR":75.3,"forearmR":-147.6,"thighL":135,"shinL":70,"footL":150,"thighR":125,"shinR":55,"footR":140,"root":{"x":60,"y":87}},"highlight":[]}}
+    {"duration":3200,"label":"Mount: sit on their belly, knees on the floor either side, hands posted","highlight":["hipL","hipR"],"pose":{"torso":140,"head":150,"upperArmL":-1.9,"forearmL":21.9,"thighL":58,"shinL":-92,"footL":-77,"upperArmR":20.5,"forearmR":17.9,"thighR":55,"shinR":-90,"footR":-75,"root":{"x":66,"y":77}},"partner":{"pose":{"torso":-90,"head":-92,"upperArmL":82.2,"forearmL":158.5,"thighL":90,"shinL":90,"footL":180,"upperArmR":90,"forearmR":90,"thighR":88,"shinR":92,"footR":180,"root":{"x":38,"y":87}},"highlight":[]},"contacts":[{"a":"hip","b":"torso","tol":12},{"a":"kneeL","b":"torso","tol":12},{"a":"handL","b":"neck","tol":12}]}
   ]
 }

@@ -7,9 +7,8 @@
     "x": 44,
     "y": 90
   },
+  "static": true,
   "frames": [
-    {"duration":800,"label":"Feet together","highlight":[],"pose":{"torso":180,"head":180,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"thighL":0,"shinL":0,"footL":90,"thighR":0,"shinR":0,"footR":90}},
-    {"duration":700,"label":"Step out, lower the front knee","highlight":["kneeL","hipL","kneeR"],"pose":{"thighL":30,"shinL":-8,"thighR":-22,"shinR":-22,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"torso":180}},
-    {"duration":1600,"label":"Front stance: front knee deep, back leg straight","highlight":["kneeL","hipL","kneeR"],"pose":{"thighL":55,"shinL":-15,"footL":90,"thighR":-40.5,"shinR":-40.5,"footR":90,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55,"torso":180,"head":180}}
+    {"duration":3200,"label":"Front stance: front knee deep, back leg straight","highlight":["kneeL","hipL","kneeR"],"pose":{"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55,"thighL":55,"shinL":-15,"footL":90,"thighR":-40.5,"shinR":-40.5,"footR":90}}
   ]
 }

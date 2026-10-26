@@ -7,8 +7,8 @@
     "x": 50,
     "y": 50
   },
+  "static": true,
   "frames": [
-    {"duration":900,"label":"Relax","highlight":[],"pose":{"torso":177,"head":168,"upperArmL":14,"forearmL":20,"upperArmR":-14,"forearmR":-20,"thighL":0,"shinL":0,"footL":75,"thighR":0,"shinR":0,"footR":-75}},
-    {"duration":1500,"label":"Attention: heels together, toes out, arms straight, chin level","highlight":["spine"],"pose":{"torso":180,"head":180,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"thighL":0,"shinL":0,"footL":75,"thighR":0,"shinR":0,"footR":-75}}
+    {"duration":3200,"label":"Attention: heels together, toes out, arms straight, chin level","highlight":["spine"],"pose":{"torso":180,"head":180,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"thighL":0,"shinL":0,"footL":75,"thighR":0,"shinR":0,"footR":-75}}
   ]
 }

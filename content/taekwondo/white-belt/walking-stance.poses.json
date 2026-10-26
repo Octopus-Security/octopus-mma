@@ -7,9 +7,8 @@
     "x": 48,
     "y": 90
   },
+  "static": true,
   "frames": [
-    {"duration":800,"label":"Attention: feet together","highlight":[],"pose":{"torso":180,"head":180,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"thighL":0,"shinL":0,"footL":90,"thighR":0,"shinR":0,"footR":90}},
-    {"duration":700,"label":"Step forward one shoulder-width","highlight":["kneeL","kneeR"],"pose":{"thighL":16,"shinL":-4,"thighR":-10,"shinR":-10,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"torso":180}},
-    {"duration":1600,"label":"Walking stance: upright, 50/50, front knee soft","highlight":["kneeL","kneeR"],"pose":{"thighL":28,"shinL":-6,"footL":90,"thighR":-20.5,"shinR":-20.5,"footR":90,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55,"torso":180,"head":180}}
+    {"duration":3200,"label":"Walking stance: upright, 50/50, front knee soft","highlight":["kneeL","kneeR"],"pose":{"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55,"thighL":28,"shinL":-6,"footL":90,"thighR":-20.5,"shinR":-20.5,"footR":90}}
   ]
 }

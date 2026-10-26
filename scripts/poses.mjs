@@ -9,6 +9,8 @@
 //                                               inside its joint limits, not that it looks like
 //                                               a hook.
 //   node scripts/poses.mjs --big --sheet ...    larger cells, for judging two-figure poses
+//   node scripts/poses.mjs --frames --sheet ...  every keyframe only, very large, two per row (no
+//                                               midpoints): the way to judge a two-figure pose
 //   node scripts/poses.mjs --dir other/dir ...  read *.json from another directory
 import { readFileSync, readdirSync, writeFileSync, statSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -24,6 +26,7 @@ function take(flag) { const i = args.indexOf(flag); return i >= 0 ? args.splice(
 const sheet = take('--sheet');
 const dirArg = take('--dir');
 const big = args.includes('--big') ? (args.splice(args.indexOf('--big'), 1), true) : false;
+const framesOnly = args.includes('--frames') ? (args.splice(args.indexOf('--frames'), 1), true) : false;
 const root = dirArg || join(here, '..', 'content');
 
 function walk(d) {
@@ -48,17 +51,20 @@ for (const f of files) {
     const frames = SF.resolveFrames(data);
     const cells = [];
     frames.forEach((fr, i) => {
-      cells.push({ svg: SF.svgFor(data, i), cap: `${i} ${fr.label || ''}`, mid: false });
-      cells.push({ svg: SF.svgFor(data, i, 0.5), cap: `${i}.5`, mid: true });
+      cells.push({ svg: SF.svgFor(data, i), cap: `${i} ${fr.label || ''}`, mid: false, vb: SF.viewBoxFor(data) });
+      if (!framesOnly) cells.push({ svg: SF.svgFor(data, i, 0.5), cap: `${i}.5`, mid: true, vb: SF.viewBoxFor(data) });
     });
     rows.push({ title: `${key} - ${data.title || ''}${errs.length ? '  [' + errs.length + ' PROBLEMS]' : ''}`, cells, bad: !!errs.length });
   }
 }
 
 if (sheet) {
-  const W = big ? 240 : 130, H = big ? 278 : 150, PER_ROW = big ? 6 : 10, PAD = 6;
+  const W = framesOnly ? 640 : big ? 240 : 130, PER_ROW = framesOnly ? 2 : big ? 6 : 10, PAD = 6;
+  const CAPN = framesOnly ? 90 : 22;
+  let H = big ? 278 : 150;
   let y = 0, body = '';
   for (const r of rows) {
+    if (framesOnly) { const [, , vw, vh] = r.cells[0].vb.split(' ').map(Number); H = Math.round(W * vh / vw); }
     const nLines = Math.ceil(r.cells.length / PER_ROW);
     body += `<text x="${PAD}" y="${y + 14}" font-size="13" font-family="sans-serif" fill="${r.bad ? '#ff7060' : '#dddddd'}">${esc(r.title)}</text>`;
     y += 20;
@@ -66,8 +72,8 @@ if (sheet) {
       const cx = PAD + (i % PER_ROW) * (W + 4), cy = y + Math.floor(i / PER_ROW) * (H + 18);
       const inner = c.svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '');
       body += `<g opacity="${c.mid ? 0.6 : 1}"><rect x="${cx}" y="${cy}" width="${W}" height="${H}" fill="#1e1e28" rx="4"/>` +
-        `<svg x="${cx}" y="${cy}" width="${W}" height="${H}" viewBox="${SF.VIEWBOX}">${inner}</svg>` +
-        `<text x="${cx + 2}" y="${cy + H + 11}" font-size="9" font-family="sans-serif" fill="#999999">${esc(c.cap.slice(0, 22))}</text></g>`;
+        `<svg x="${cx}" y="${cy}" width="${W}" height="${H}" viewBox="${c.vb}">${inner}</svg>` +
+        `<text x="${cx + 2}" y="${cy + H + 11}" font-size="${framesOnly ? 14 : 9}" font-family="sans-serif" fill="#999999">${esc(c.cap.slice(0, CAPN))}</text></g>`;
     });
     y += nLines * (H + 18) + 10;
   }
