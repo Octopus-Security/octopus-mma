@@ -1,117 +1,17 @@
 {
-  "title": "Rising Block (Age Uke)",
-  "loop": true,
+  "version": 2,
+  "title": "Age-uke (Rising Block)",
+  "view": "side",
+  "anchor": {
+    "joint": "ankleL",
+    "x": 46,
+    "y": 90
+  },
   "frames": [
-    {
-      "duration": 1200,
-      "ease": "ease-in-out",
-      "label": "Front Stance",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 55, "y": 35 },
-        "elbowR":    { "x": 40, "y": 35 },
-        "handL":     { "x": 54, "y": 50 },
-        "handR":     { "x": 38, "y": 50 },
-        "hipL":      { "x": 51, "y": 52 },
-        "hipR":      { "x": 43, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    },
-    {
-      "duration": 500,
-      "ease": "ease-out",
-      "label": "Wind Up",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 56, "y": 37 },
-        "elbowR":    { "x": 42, "y": 33 },
-        "handL":     { "x": 62, "y": 51 },
-        "handR":     { "x": 50, "y": 26 },
-        "hipL":      { "x": 51, "y": 52 },
-        "hipR":      { "x": 43, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    },
-    {
-      "duration": 280,
-      "ease": "ease-in-out",
-      "label": "Block",
-      "highlight": ["elbowL", "handL"],
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 48, "y": 13 },
-        "elbowR":    { "x": 40, "y": 35 },
-        "handL":     { "x": 55, "y": 3  },
-        "handR":     { "x": 38, "y": 50 },
-        "hipL":      { "x": 51, "y": 52 },
-        "hipR":      { "x": 43, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    },
-    {
-      "duration": 350,
-      "ease": "ease-in",
-      "label": "Retract",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 56, "y": 37 },
-        "elbowR":    { "x": 42, "y": 33 },
-        "handL":     { "x": 62, "y": 51 },
-        "handR":     { "x": 50, "y": 26 },
-        "hipL":      { "x": 51, "y": 52 },
-        "hipR":      { "x": 43, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    },
-    {
-      "duration": 800,
-      "ease": "ease-in-out",
-      "label": "Return",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 55, "y": 35 },
-        "elbowR":    { "x": 40, "y": 35 },
-        "handL":     { "x": 54, "y": 50 },
-        "handR":     { "x": 38, "y": 50 },
-        "hipL":      { "x": 51, "y": 52 },
-        "hipR":      { "x": 43, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    }
+    {"duration":600,"label":"Zenkutsu-dachi","highlight":[],"pose":{"thighL":55,"shinL":-15,"footL":90,"thighR":-40.5,"shinR":-40.5,"footR":90,"torso":180,"head":180,"upperArmL":30,"forearmL":120,"upperArmR":80,"forearmR":90}},
+    {"duration":380,"label":"Wind up: fist rises from the opposite hip","highlight":[],"pose":{"upperArmL":20,"forearmL":100,"upperArmR":80,"forearmR":90}},
+    {"duration":200,"label":"Age-uke: forearm above the forehead, hikite to the hip","highlight":["shoulderL","elbowL","hand"],"pose":{"upperArmL":130,"forearmL":200,"upperArmR":-20,"forearmR":55,"torso":178}},
+    {"duration":350,"label":"Hold: tighten at the finish","highlight":["shoulderL","elbowL","hand"],"pose":{"torso":178}},
+    {"duration":450,"label":"Return","highlight":[],"pose":{"thighL":55,"shinL":-15,"footL":90,"thighR":-40.5,"shinR":-40.5,"footR":90,"torso":180,"head":180,"upperArmL":30,"forearmL":120,"upperArmR":80,"forearmR":90}}
   ]
 }

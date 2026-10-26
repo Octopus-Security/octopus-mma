@@ -1,117 +1,20 @@
 {
-  "title": "Lunge Punch (Oi Zuki)",
-  "loop": true,
+  "version": 2,
+  "title": "Oi-zuki (Lunge Punch)",
+  "view": "side",
+  "anchor": {
+    "joint": "ankleL",
+    "x": 40,
+    "y": 90
+  },
+  "pins": [
+    "ankleR"
+  ],
   "frames": [
-    {
-      "duration": 1200,
-      "ease": "ease-in-out",
-      "label": "Front Stance",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 57, "y": 30 },
-        "elbowR":    { "x": 47, "y": 30 },
-        "handL":     { "x": 62, "y": 23 },
-        "handR":     { "x": 52, "y": 23 },
-        "hipL":      { "x": 51, "y": 52 },
-        "hipR":      { "x": 43, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    },
-    {
-      "duration": 500,
-      "ease": "ease-out",
-      "label": "Chamber",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 52, "y": 35 },
-        "elbowR":    { "x": 42, "y": 35 },
-        "handL":     { "x": 50, "y": 50 },
-        "handR":     { "x": 40, "y": 50 },
-        "hipL":      { "x": 51, "y": 52 },
-        "hipR":      { "x": 43, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    },
-    {
-      "duration": 280,
-      "ease": "ease-in-out",
-      "label": "Punch",
-      "highlight": ["elbowL", "handL"],
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 49, "y": 50 },
-        "shoulderL": { "x": 54, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 63, "y": 30 },
-        "elbowR":    { "x": 41, "y": 35 },
-        "handL":     { "x": 76, "y": 25 },
-        "handR":     { "x": 40, "y": 50 },
-        "hipL":      { "x": 52, "y": 52 },
-        "hipR":      { "x": 44, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    },
-    {
-      "duration": 350,
-      "ease": "ease-in",
-      "label": "Retract",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 52, "y": 35 },
-        "elbowR":    { "x": 42, "y": 35 },
-        "handL":     { "x": 50, "y": 50 },
-        "handR":     { "x": 40, "y": 50 },
-        "hipL":      { "x": 51, "y": 52 },
-        "hipR":      { "x": 43, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    },
-    {
-      "duration": 800,
-      "ease": "ease-in-out",
-      "label": "Return",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 49, "y": 15 },
-        "spine":     { "x": 48, "y": 50 },
-        "shoulderL": { "x": 53, "y": 21 },
-        "shoulderR": { "x": 43, "y": 21 },
-        "elbowL":    { "x": 57, "y": 30 },
-        "elbowR":    { "x": 47, "y": 30 },
-        "handL":     { "x": 62, "y": 23 },
-        "handR":     { "x": 52, "y": 23 },
-        "hipL":      { "x": 51, "y": 52 },
-        "hipR":      { "x": 43, "y": 52 },
-        "kneeL":     { "x": 54, "y": 68 },
-        "kneeR":     { "x": 38, "y": 78 },
-        "footL":     { "x": 58, "y": 92 },
-        "footR":     { "x": 32, "y": 92 }
-      }
-    }
+    {"duration":700,"label":"Left zenkutsu-dachi, right fist out","highlight":[],"pose":{"thighL":55,"shinL":-15,"footL":90,"thighR":-40.5,"shinR":-40.5,"footR":90,"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":90,"forearmR":90}},
+    {"duration":260,"label":"Step through: right foot travels, fist chambers","highlight":["hipR","kneeR"],"pose":{"thighL":10,"shinL":10,"footL":90,"thighR":80,"shinR":30,"footR":110,"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55}},
+    {"duration":170,"label":"Right foot lands: lunge punch, left fist to the hip","highlight":["shoulderR","elbowR","hand","hipR"],"pose":{"thighR":55,"shinR":-15,"footR":90,"thighL":-40.5,"shinL":-40.5,"footL":90,"torso":176,"head":178,"upperArmL":-20,"forearmL":55,"upperArmR":90,"forearmR":90}},
+    {"duration":260,"label":"Hold: lock at the moment the foot lands","highlight":["shoulderR","elbowR","hand"],"pose":{"torso":174}},
+    {"duration":450,"label":"Step back and reset","highlight":[],"pose":{"thighL":55,"shinL":-15,"footL":90,"thighR":-40.5,"shinR":-40.5,"footR":90,"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":90,"forearmR":90}}
   ]
 }

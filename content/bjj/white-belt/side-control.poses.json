@@ -1,84 +1,9 @@
 {
+  "version": 2,
   "title": "Side Control",
-  "loop": true,
+  "view": "side",
   "frames": [
-    {
-      "duration": 2200,
-      "ease": "ease-in-out",
-      "label": "Side Control",
-      "joints": {
-        "head":      { "x": 30, "y": 32 },
-        "neck":      { "x": 36, "y": 38 },
-        "spine":     { "x": 48, "y": 60 },
-        "shoulderL": { "x": 26, "y": 44 },
-        "shoulderR": { "x": 46, "y": 44 },
-        "elbowL":    { "x": 18, "y": 54 },
-        "elbowR":    { "x": 54, "y": 50 },
-        "handL":     { "x": 12, "y": 64 },
-        "handR":     { "x": 60, "y": 58 },
-        "hipL":      { "x": 44, "y": 64 },
-        "hipR":      { "x": 52, "y": 68 },
-        "kneeL":     { "x": 62, "y": 52 },
-        "kneeR":     { "x": 70, "y": 46 },
-        "footL":     { "x": 76, "y": 42 },
-        "footR":     { "x": 82, "y": 36 }
-      },
-      "opponentJoints": {
-        "head":      { "x": 14, "y": 68 },
-        "neck":      { "x": 22, "y": 68 },
-        "spine":     { "x": 66, "y": 70 },
-        "shoulderL": { "x": 22, "y": 64 },
-        "shoulderR": { "x": 24, "y": 74 },
-        "elbowL":    { "x": 12, "y": 60 },
-        "elbowR":    { "x": 14, "y": 80 },
-        "handL":     { "x":  6, "y": 56 },
-        "handR":     { "x":  8, "y": 84 },
-        "hipL":      { "x": 72, "y": 66 },
-        "hipR":      { "x": 74, "y": 74 },
-        "kneeL":     { "x": 83, "y": 63 },
-        "kneeR":     { "x": 85, "y": 77 },
-        "footL":     { "x": 92, "y": 61 },
-        "footR":     { "x": 93, "y": 79 }
-      }
-    },
-    {
-      "duration": 2200,
-      "ease": "ease-in-out",
-      "label": "Pressure Down",
-      "joints": {
-        "head":      { "x": 30, "y": 36 },
-        "neck":      { "x": 36, "y": 42 },
-        "spine":     { "x": 48, "y": 63 },
-        "shoulderL": { "x": 26, "y": 48 },
-        "shoulderR": { "x": 46, "y": 48 },
-        "elbowL":    { "x": 18, "y": 58 },
-        "elbowR":    { "x": 54, "y": 54 },
-        "handL":     { "x": 12, "y": 67 },
-        "handR":     { "x": 60, "y": 62 },
-        "hipL":      { "x": 44, "y": 67 },
-        "hipR":      { "x": 52, "y": 71 },
-        "kneeL":     { "x": 62, "y": 55 },
-        "kneeR":     { "x": 70, "y": 49 },
-        "footL":     { "x": 76, "y": 45 },
-        "footR":     { "x": 82, "y": 39 }
-      },
-      "opponentJoints": {
-        "head":      { "x": 14, "y": 70 },
-        "neck":      { "x": 22, "y": 70 },
-        "spine":     { "x": 66, "y": 72 },
-        "shoulderL": { "x": 22, "y": 66 },
-        "shoulderR": { "x": 24, "y": 76 },
-        "elbowL":    { "x": 12, "y": 62 },
-        "elbowR":    { "x": 14, "y": 82 },
-        "handL":     { "x":  6, "y": 58 },
-        "handR":     { "x":  8, "y": 86 },
-        "hipL":      { "x": 72, "y": 68 },
-        "hipR":      { "x": 74, "y": 76 },
-        "kneeL":     { "x": 83, "y": 65 },
-        "kneeR":     { "x": 85, "y": 79 },
-        "footL":     { "x": 92, "y": 63 },
-        "footR":     { "x": 93, "y": 81 }
-      }
-    }
+    {"duration":1100,"label":"Chest on chest, near knee blocks the hip","highlight":["spine","kneeL","shoulderL"],"pose":{"torso":105,"head":100,"upperArmL":-54.8,"forearmL":31.3,"upperArmR":-91.5,"forearmR":-25.3,"thighL":-48,"shinL":-90,"footL":-75,"thighR":-48,"shinR":-90,"footR":-75,"root":{"x":46,"y":76.5}},"partner":{"pose":{"torso":-90,"head":-88,"upperArmL":91.3,"forearmL":-128.2,"upperArmR":111.8,"forearmR":-95.9,"thighL":160,"shinL":30,"footL":100,"thighR":150,"shinR":25,"footR":95,"root":{"x":72,"y":87}},"highlight":[]}},
+    {"duration":1000,"label":"Drop the weight: hips low, not on the knees","highlight":["spine","hipL","hipR"],"pose":{"torso":100,"head":96,"upperArmL":-65.8,"forearmL":35.5,"upperArmR":-90.6,"forearmR":-27.9,"thighL":-48,"shinL":-90,"footL":-75,"thighR":-48,"shinR":-90,"footR":-75,"root":{"x":46,"y":77}},"partner":{"pose":{"torso":-90,"head":-88,"upperArmL":73.7,"forearmL":-143.1,"upperArmR":89.2,"forearmR":-111.8,"thighL":160,"shinL":30,"footL":100,"thighR":150,"shinR":25,"footR":95,"root":{"x":72,"y":87}},"highlight":[]}}
   ]
 }

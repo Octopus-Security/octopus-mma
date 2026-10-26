@@ -1,50 +1,14 @@
 {
-  "title": "Attention Stance (Charyeot Seogi)",
-  "loop": true,
+  "version": 2,
+  "title": "Attention Stance (Charyot)",
+  "view": "front",
+  "anchor": {
+    "joint": "hip",
+    "x": 50,
+    "y": 50
+  },
   "frames": [
-    {
-      "duration": 2500,
-      "ease": "ease-in-out",
-      "label": "Attention",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 50, "y": 15 },
-        "spine":     { "x": 50, "y": 50 },
-        "shoulderL": { "x": 44, "y": 21 },
-        "shoulderR": { "x": 57, "y": 21 },
-        "elbowL":    { "x": 41, "y": 38 },
-        "elbowR":    { "x": 60, "y": 38 },
-        "handL":     { "x": 40, "y": 56 },
-        "handR":     { "x": 61, "y": 56 },
-        "hipL":      { "x": 47, "y": 52 },
-        "hipR":      { "x": 54, "y": 52 },
-        "kneeL":     { "x": 47, "y": 72 },
-        "kneeR":     { "x": 54, "y": 72 },
-        "footL":     { "x": 46, "y": 94 },
-        "footR":     { "x": 55, "y": 94 }
-      }
-    },
-    {
-      "duration": 2500,
-      "ease": "ease-in-out",
-      "label": "Hold",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 50, "y": 15 },
-        "spine":     { "x": 50, "y": 50 },
-        "shoulderL": { "x": 44, "y": 21 },
-        "shoulderR": { "x": 57, "y": 21 },
-        "elbowL":    { "x": 41, "y": 38 },
-        "elbowR":    { "x": 60, "y": 38 },
-        "handL":     { "x": 40, "y": 55 },
-        "handR":     { "x": 61, "y": 55 },
-        "hipL":      { "x": 47, "y": 52 },
-        "hipR":      { "x": 54, "y": 52 },
-        "kneeL":     { "x": 47, "y": 72 },
-        "kneeR":     { "x": 54, "y": 72 },
-        "footL":     { "x": 46, "y": 94 },
-        "footR":     { "x": 55, "y": 94 }
-      }
-    }
+    {"duration":900,"label":"Relax","highlight":[],"pose":{"torso":177,"head":168,"upperArmL":14,"forearmL":20,"upperArmR":-14,"forearmR":-20,"thighL":0,"shinL":0,"footL":75,"thighR":0,"shinR":0,"footR":-75}},
+    {"duration":1500,"label":"Attention: heels together, toes out, arms straight, chin level","highlight":["spine"],"pose":{"torso":180,"head":180,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"thighL":0,"shinL":0,"footL":75,"thighR":0,"shinR":0,"footR":-75}}
   ]
 }

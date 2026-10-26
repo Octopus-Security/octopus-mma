@@ -1,50 +1,15 @@
 {
+  "version": 2,
   "title": "Walking Stance (Ap Seogi)",
-  "loop": true,
+  "view": "side",
+  "anchor": {
+    "joint": "ankleL",
+    "x": 48,
+    "y": 90
+  },
   "frames": [
-    {
-      "duration": 2000,
-      "ease": "ease-in-out",
-      "label": "Walking Stance",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 50, "y": 15 },
-        "spine":     { "x": 49, "y": 50 },
-        "shoulderL": { "x": 46, "y": 21 },
-        "shoulderR": { "x": 56, "y": 21 },
-        "elbowL":    { "x": 40, "y": 35 },
-        "elbowR":    { "x": 62, "y": 35 },
-        "handL":     { "x": 37, "y": 50 },
-        "handR":     { "x": 65, "y": 50 },
-        "hipL":      { "x": 47, "y": 52 },
-        "hipR":      { "x": 55, "y": 52 },
-        "kneeL":     { "x": 49, "y": 71 },
-        "kneeR":     { "x": 54, "y": 71 },
-        "footL":     { "x": 53, "y": 93 },
-        "footR":     { "x": 43, "y": 93 }
-      }
-    },
-    {
-      "duration": 2000,
-      "ease": "ease-in-out",
-      "label": "Weight Check",
-      "joints": {
-        "head":      { "x": 50, "y": 8  },
-        "neck":      { "x": 50, "y": 15 },
-        "spine":     { "x": 49, "y": 51 },
-        "shoulderL": { "x": 46, "y": 22 },
-        "shoulderR": { "x": 56, "y": 22 },
-        "elbowL":    { "x": 40, "y": 36 },
-        "elbowR":    { "x": 62, "y": 36 },
-        "handL":     { "x": 37, "y": 51 },
-        "handR":     { "x": 65, "y": 51 },
-        "hipL":      { "x": 47, "y": 53 },
-        "hipR":      { "x": 55, "y": 53 },
-        "kneeL":     { "x": 49, "y": 72 },
-        "kneeR":     { "x": 54, "y": 72 },
-        "footL":     { "x": 53, "y": 93 },
-        "footR":     { "x": 43, "y": 93 }
-      }
-    }
+    {"duration":800,"label":"Attention: feet together","highlight":[],"pose":{"torso":180,"head":180,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"thighL":0,"shinL":0,"footL":90,"thighR":0,"shinR":0,"footR":90}},
+    {"duration":700,"label":"Step forward one shoulder-width","highlight":["kneeL","kneeR"],"pose":{"thighL":16,"shinL":-4,"thighR":-10,"shinR":-10,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"torso":180}},
+    {"duration":1600,"label":"Walking stance: upright, 50/50, front knee soft","highlight":["kneeL","kneeR"],"pose":{"thighL":28,"shinL":-6,"footL":90,"thighR":-20.5,"shinR":-20.5,"footR":90,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55,"torso":180,"head":180}}
   ]
 }
