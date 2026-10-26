@@ -7,9 +7,8 @@
     "x": 50,
     "y": 50.2
   },
+  "static": true,
   "frames": [
-    {"duration":800,"label":"Attention","highlight":[],"pose":{"torso":180,"head":180,"upperArmL":0,"forearmL":0,"upperArmR":0,"forearmR":0,"thighL":0,"shinL":0,"footL":75,"thighR":0,"shinR":0,"footR":-75}},
-    {"duration":700,"label":"Step out to shoulder width, feet parallel","highlight":["hipL","hipR"],"pose":{"torso":180,"head":180,"upperArmL":-8,"forearmL":-25,"upperArmR":8,"forearmR":25,"thighL":5.7,"shinL":5.7,"footL":90,"thighR":-5.7,"shinR":-5.7,"footR":-90}},
-    {"duration":1500,"label":"Ready: fists in front at belt level","highlight":["elbowL","elbowR"],"pose":{"torso":180,"head":180,"upperArmL":-10,"forearmL":-38,"upperArmR":10,"forearmR":38,"thighL":5.7,"shinL":5.7,"footL":90,"thighR":-5.7,"shinR":-5.7,"footR":-90}}
+    {"duration":3200,"label":"Ready: fists in front at belt level","highlight":["elbowL","elbowR"],"pose":{"torso":180,"head":180,"upperArmL":-10,"forearmL":-38,"upperArmR":10,"forearmR":38,"thighL":5.7,"shinL":5.7,"footL":90,"thighR":-5.7,"shinR":-5.7,"footR":-90}}
   ]
 }

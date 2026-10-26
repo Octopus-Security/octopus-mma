@@ -7,13 +7,9 @@
     "x": 56,
     "y": 90
   },
-  "highlight": [
-    "kneeL",
-    "kneeR"
-  ],
+  "static": true,
+  "idle": "bounce",
   "frames": [
-    {"duration":700,"label":"Guard: lead foot forward, hands up","pose":{"torso":172,"head":172,"upperArmL":30,"forearmL":160,"upperArmR":20,"forearmR":165,"thighL":12,"shinL":-4,"footL":90,"thighR":-22,"shinR":-20,"footR":70}},
-    {"duration":380,"label":"Weight forward, chin tucked","pose":{"torso":170,"head":168,"thighL":18,"shinL":-8,"thighR":-24,"shinR":-22,"upperArmL":36,"forearmL":156}},
-    {"duration":380,"label":"Weight back, stay balanced","pose":{"torso":176,"head":176,"thighL":8,"shinL":-2,"thighR":-18,"shinR":-16,"footR":76,"upperArmL":28,"forearmL":162}}
+    {"duration":1400,"label":"Guard: lead foot forward, hands up","highlight":[],"pose":{"torso":172,"head":172,"upperArmL":30,"forearmL":160,"upperArmR":20,"forearmR":165,"thighL":12,"shinL":-4,"footL":90,"thighR":-22,"shinR":-20,"footR":70}}
   ]
 }

@@ -6,6 +6,7 @@ import type { PoseData } from "@/lib/poses";
 
 export interface PoseAnimState {
   html:        string;
+  viewBox:     string;
   frameIndex:  number;
   frameLabel:  string;
   hasPartner:  boolean;
@@ -63,7 +64,7 @@ export function usePoseAnimation(data: PoseData): PoseAnimState {
   }, [tl, starts]);
 
   return {
-    html: view.html, frameIndex: view.index, frameLabel: view.label || `Frame ${view.index + 1}`,
+    html: view.html, viewBox: tl.viewBox, frameIndex: view.index, frameLabel: view.label || `Frame ${view.index + 1}`,
     hasPartner, isPlaying, play, pause, goToFrame, speed, setSpeed, totalFrames: tl.frames.length,
   };
 }

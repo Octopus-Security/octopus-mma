@@ -35,7 +35,11 @@ written any more.
 - **Frame 0 has all twelve angles**; later frames list only what changes. The last
   frame loops back to the first, so a two-frame file is a full rep.
 - `duration` 150–10000 ms is the time spent moving *from* this frame to the next.
-  `ease`: `ease-in-out` (default), `linear`, `ease-in`, `ease-out`.
+  The key pose is **held** for the first part of it (a quarter of the duration, at most
+  120 ms), then the move to the next frame takes the rest, eased. `ease`: `ease-in-out`
+  (default, smootherstep: zero speed and acceleration at both ends), `linear`, `ease-in`,
+  `ease-out`. Time-based, so it plays at the display's frame rate. The last frame tweens
+  back to frame 0 through exactly the same path, so the loop seam is not special.
 - `highlight`: what to colour red (`kneeL`, `hipL`, `shoulderR`, `elbowL`, `ankleL`,
   `hand`, `spine`, `neck`) — the working muscles. Per frame overrides it.
 
@@ -90,7 +94,7 @@ sides are `upperArmL: 90, upperArmR: -90`, and feet point outwards with
   radius of 7), so "on the floor" is generous and "through the floor" is
   a real overlap.
 - A body lying full length is about 94 units long, so centre the hip at x≈50.
-- Everything stays within x 1–99 and above y −19.5 (the head radius is 7), which leaves room for arms overhead and a pull-up bar at y≈−8.
+- Everything stays within x 1–99 (single figure; a partner pose is fitted instead) and above y −19.5 (the head radius is 7), which leaves room for arms overhead and a pull-up bar at y≈−8.
 - `"air": true` on a frame that is airborne (jumps). `"grounded": false` on an
   animation where the figure is supported off the floor (pull-up bar, dip bars).
 
@@ -100,6 +104,23 @@ sides are `upperArmL: 90, upperArmR: -90`, and feet point outwards with
   hands and move with them.
 - `props` are fixed scenery: `bar {x1,y1,x2,y2}`, `box {x,y,w,h}` (a bench, a
   seat, a plyo box), `ball {x,y,r}`, `roller {x,y,r}`, `wall {x}`.
+
+### Static poses: stances and positions that do not move
+
+A stance (attention, ready, walking, fighting, a front stance, a BJJ position held still) is
+not an animation, and must not be bent out of shape to satisfy the "must move" rule. Declare it:
+
+```json
+{ "version": 2, "title": "Fighting Stance", "static": true, "idle": "bounce", "anchor": {...},
+  "frames": [ { "duration": 1400, "label": "Guard: ...", "pose": { ...all twelve angles... } } ] }
+```
+
+- `"static": true` exempts the file from "must move" and requires **exactly one frame**.
+- The viewer draws that one pose and *idles*: the whole body rises and settles as a rigid
+  unit (no limb angle changes). `"idle"`: `"breathe"` (default; a 0.5-unit rise, one breath per
+  `duration`, so use ~3200), `"bounce"` (a light fighting-stance hop, 2.2 units every 0.7 s;
+  use `duration` 1400), or `"none"`.
+- Everything else (joint limits, floor, partner rules) still applies.
 
 ## Reference positions (side view, each checked against the validator 2026-10-25)
 
@@ -120,8 +141,16 @@ faces down without anything extra.
 
 ## Joint limits (side view): the validator's numbers
 
-- knee: `thigh − shin` from −10 to 165 (positive is bent)
-- elbow: `forearm − upperArm` from −10 to 165
+- knee: `thigh − shin` from **−5** to 165. Positive is bent: the shin goes BEHIND the thigh.
+  A knee never folds the other way (shin forward of thigh, foot out in front), and 5° of
+  hyperextension is the most allowed.
+- elbow: `forearm − upperArm` from **−5** to 165 (the forearm only swings forward).
+- These are checked at the keyframes **and at seven points to the next frame**, because a
+  pinned foot is re-solved in between. Everything is authored facing right and the partner is
+  mirrored afterwards, so the same signs hold for both figures. The pin solver itself now
+  always folds an elbow forward and a knee backwards (it used to copy the direction of the
+  keyframe, and read a *straight* leg as "folds forward": the straight-punch step bent
+  backwards mid-stride). Front view has no depth axis in the picture and is not checked.
 - ankle: `foot − shin` from 15 to 140 (90 is neutral)
 - hip: `180 − torso + thigh` from −60 to 178 (0 standing, 90 sitting)
 - neck: `head − torso` within ±70
@@ -138,10 +167,32 @@ all twelve angles; later frames inherit. Details that are easy to get wrong:
   (x becomes 100 - x), so it faces left and is drawn in blue. Its `root`/`anchor` x values are
   in that pre-mirror space: to put the partner at screen x = 62, write 38.
 - `"partnerFront": true` (top level) draws it over the main figure; the default is behind.
-- The partner obeys every rule the main figure does (connection, joint limits, floor, frame),
-  except that it need not move. Contact between the two figures is NOT checked: look at the sheet.
-- `highlight` on a frame colours the main figure; `partner.highlight` colours the partner.
+- The partner obeys every rule the main figure does (connection, joint limits, floor), except
+  that it need not move. **With a partner the left/right frame limits (x 1-99) are lifted**: the
+  picture is fitted to the pair instead (below), so a body lying full length can sit anywhere.
+- `highlight` on a frame colours the main figure; `partner.highlight` colours the partner. Put the
+  highlight on the limb doing the job (the trapped arm, the hips driving into it), never on one buried
+  inside another body.
 
+### Two figures: framing, layering and contact
+
+- **Framing.** `viewBoxFor(data)` (also `timeline(data).viewBox`) is the padded bounding box of
+  BOTH figures over the whole loop, floor included, fixed for the animation so it never jumps. A
+  single figure keeps the standard `0 -20 100 116`. The viewer, the download card and the GIF generator
+  all use it. The floor line is drawn wide enough for any box.
+- **Layering.** The partner is drawn first (behind) and the main figure on top, so put the player whose
+  limbs do the holding in the main slot. `"partnerFront": true` flips the whole order. To bring just one
+  partner limb in front of the main figure (an arm trapped *between* the attacker's legs), list it on the
+  partner block: `"partner": { "pose": {...}, "over": ["armL"] }`. Parts: `armL armR legL legR torso head`.
+  `over` is per frame (not inherited).
+- **No torso through a torso.** `validate()` rejects a frame (keyframes and the in-betweens) where the two
+  spines (hip to neck) come closer than 7 units; each is drawn 10 wide. Limbs may wrap a body (legs round a
+  waist); spines may not cross.
+- **Contacts.** A frame may declare `"contacts": [{"a": "thighL", "b": "neck", "tol": 9}]`: `a` is a joint or
+  bone of the main figure, `b` of the partner (joints: `hip neck head shoulderL/R elbowL/R handL/R hipL/R
+  kneeL/R ankleL/R toeL/R`; bones: `torso head upperArmL/R forearmL/R thighL/R shinL/R footL/R`). They are
+  measured on screen, bone to bone, at that keyframe, and must be within `tol` (default 9). A contact that is
+  declared is a contact that is checked; it is how a wrist grab or a leg over a neck stays touching.
 ## Conventions for martial-arts poses
 
 - **Orthodox, facing right.** `L` is the near, bright side and is the LEAD side: left foot
@@ -166,6 +217,7 @@ node scripts/poses.mjs                          # the rule book over every pose;
 node scripts/poses.mjs jab hook                 # just these (substring of the path)
 node scripts/poses.mjs --sheet /tmp/s.png jab   # contact sheet: every keyframe plus the midpoint
 node scripts/poses.mjs --big --sheet /tmp/s.png bjj   # larger cells, for two-figure poses
+node scripts/poses.mjs --frames --sheet /tmp/s.png armbar   # keyframes only, very large, fitted box: judge a grapple
 node --test test/poses.test.js
 ```
 

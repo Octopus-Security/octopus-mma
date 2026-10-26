@@ -3,18 +3,18 @@
   "title": "Straight Punch (Baro Jirugi)",
   "view": "side",
   "anchor": {
-    "joint": "ankleL",
+    "joint": "ankleR",
     "x": 40,
     "y": 90
   },
   "pins": [
-    "ankleR"
+    "ankleL"
   ],
   "frames": [
-    {"duration":700,"label":"Left walking stance, right fist out","highlight":[],"pose":{"thighL":28,"shinL":-6,"footL":90,"thighR":-20.5,"shinR":-20.5,"footR":90,"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":90,"forearmR":90}},
-    {"duration":260,"label":"Step: right foot comes through, fist chambers","highlight":["hipR","kneeR"],"pose":{"thighL":2,"shinL":2,"footL":90,"thighR":60,"shinR":20,"footR":110,"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55}},
-    {"duration":170,"label":"Right foot lands: punch with the same-side fist","highlight":["shoulderR","elbowR","hand","hipR"],"pose":{"thighR":28,"shinR":-6,"footR":90,"thighL":-20.5,"shinL":-20.5,"footL":90,"torso":176,"head":178,"upperArmL":-20,"forearmL":55,"upperArmR":90,"forearmR":90}},
-    {"duration":260,"label":"Hold: lock at the moment the foot lands","highlight":["shoulderR","elbowR","hand"],"pose":{"torso":174}},
-    {"duration":450,"label":"Step back and reset","highlight":[],"pose":{"thighL":28,"shinL":-6,"footL":90,"thighR":-20.5,"shinR":-20.5,"footR":90,"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":90,"forearmR":90}}
+    {"duration":700,"label":"Right walking stance, both fists chambered at the hips","highlight":[],"pose":{"thighR":28,"shinR":-6,"footR":90,"thighL":-20.5,"shinL":-20.5,"footL":90,"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55}},
+    {"duration":380,"label":"Step: the left foot swings through, fists stay chambered","highlight":["hipL","kneeL"],"pose":{"thighR":2,"shinR":2,"footR":90,"thighL":60,"shinL":20,"footL":110,"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55}},
+    {"duration":260,"label":"Left foot lands: the left fist punches straight out","highlight":["shoulderL","elbowL","handL"],"pose":{"thighL":28,"shinL":-6,"footL":90,"thighR":-20.5,"shinR":-20.5,"footR":90,"torso":176,"head":178,"upperArmL":90,"forearmL":90,"upperArmR":-20,"forearmR":55}},
+    {"duration":500,"label":"Hold: arm straight at shoulder height, other fist at the hip","highlight":["shoulderL","elbowL","handL"],"pose":{"torso":174}},
+    {"duration":450,"label":"Pull the fist back, left foot lifts to step back","highlight":[],"pose":{"thighR":2,"shinR":2,"footR":90,"thighL":-25,"shinL":-60,"footL":30,"torso":180,"head":180,"upperArmL":-20,"forearmL":55,"upperArmR":-20,"forearmR":55}}
   ]
 }

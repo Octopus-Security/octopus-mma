@@ -31,7 +31,8 @@ function esc(s) {
   return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
 
-function cardSVG(frontmatter, sceneHtml, frameLabel) {
+function cardSVG(frontmatter, sceneHtml, frameLabel, viewBox = SF.VIEWBOX) {
+  const [, , vbW, vbH] = viewBox.split(' ').map(Number);
   const pad  = 60;
   const disc = frontmatter.discipline.charAt(0).toUpperCase() +
                frontmatter.discipline.slice(1).replace(/-/g," ");
@@ -52,10 +53,10 @@ function cardSVG(frontmatter, sceneHtml, frameLabel) {
   const figBot  = CARD_H - 140;
   const figAreaH = figBot - figTop;
 
-  // Figure scale (engine viewBox is 100 x 116 units)
-  const figScale = Math.min(figAreaH / 116, (CARD_W - pad*2) / 100);
-  const figW     = 100 * figScale;
-  const figH     = 116 * figScale;
+  // Figure scale (the engine's standard viewBox is 100 x 116 units; a two-figure pose has its own)
+  const figScale = Math.min(figAreaH / vbH, (CARD_W - pad*2) / vbW);
+  const figW     = vbW * figScale;
+  const figH     = vbH * figScale;
   const tx       = (CARD_W - figW) / 2;
   const ty       = figTop + (figAreaH - figH) / 2;
 
@@ -78,7 +79,7 @@ function cardSVG(frontmatter, sceneHtml, frameLabel) {
 
   <line x1="${pad}" y1="${sepY}" x2="${CARD_W - pad}" y2="${sepY}" stroke="#1f2937" stroke-width="1"/>
 
-  <svg x="${r2(tx)}" y="${r2(ty)}" width="${r2(figW)}" height="${r2(figH)}" viewBox="${SF.VIEWBOX}">${sceneHtml}</svg>
+  <svg x="${r2(tx)}" y="${r2(ty)}" width="${r2(figW)}" height="${r2(figH)}" viewBox="${viewBox}">${sceneHtml}</svg>
 
   <text x="${CARD_W/2}" y="${labelY}" font-family="DejaVu Sans,sans-serif" font-size="34" fill="#d1d5db" font-weight="600" text-anchor="middle" letter-spacing="2">${esc(frameLabel.toUpperCase())}</text>
 
@@ -100,7 +101,7 @@ async function generateGif(poses, frontmatter, outputPath) {
 
   for (let i = 0; i < frameCount; i++) {
     const { html, label } = tl.at(i * FPS_MS);
-    const svg    = cardSVG(frontmatter, html, label);
+    const svg    = cardSVG(frontmatter, html, label, tl.viewBox);
     const resvg  = new Resvg(svg, { fitTo: { mode: "width", value: CARD_W } });
     const { pixels } = resvg.render();
     encoder.addFrame(Buffer.from(pixels));

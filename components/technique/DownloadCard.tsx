@@ -21,10 +21,10 @@ type Ctx = CanvasRenderingContext2D;
 // ── Figure raster ─────────────────────────────────────────────────────────────
 // The engine (lib/stick-figure.js) returns the scene as SVG markup; the card draws it as an image.
 
-const [VB_X, VB_Y, VB_W, VB_H] = SF.VIEWBOX.split(" ").map(Number);
-
-function loadFigure(html: string): Promise<HTMLImageElement> {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${SF.VIEWBOX}" width="${VB_W * 8}" height="${VB_H * 8}">${html}</svg>`;
+// A two-figure pose has its own, wider box (SF.viewBoxFor), so the picture is sized from the image itself.
+function loadFigure(html: string, viewBox: string): Promise<HTMLImageElement> {
+  const [, , bw, bh] = viewBox.split(" ").map(Number);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" width="${bw * 8}" height="${bh * 8}">${html}</svg>`;
   const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
   return new Promise((resolve, reject) => {
     const img = new Image();
@@ -33,7 +33,6 @@ function loadFigure(html: string): Promise<HTMLImageElement> {
     img.src = url;
   });
 }
-void VB_X; void VB_Y;
 
 // ── Text wrapping ─────────────────────────────────────────────────────────────
 
@@ -59,6 +58,7 @@ function drawCard(
   ctx: Ctx, w: number, h: number, format: Format,
   fm: TechniqueFrontmatter, fig: HTMLImageElement, frameLabel: string,
 ) {
+  const VB_W = 100, VB_H = (100 * fig.height) / fig.width;   // the figure's own aspect (standard box or fitted two-figure box)
   const isLandscape = format === "landscape";
   const pad = Math.round(w * 0.056);
 
@@ -197,7 +197,7 @@ export default function DownloadCard({
     for (let i = 0; i < totalFrames; i++) {
       const elapsed = i * FPS_MS;
       const { html, label } = tl.at(elapsed);
-      drawCard(ctx, w, h, format, frontmatter, await loadFigure(html), label);
+      drawCard(ctx, w, h, format, frontmatter, await loadFigure(html, tl.viewBox), label);
       gif.addFrame(canvas, { delay: FPS_MS, copy: true });
       setProgress(i / totalFrames * 0.5);
       await new Promise(r => setTimeout(r, 0)); // yield to keep UI responsive

@@ -7,13 +7,9 @@
     "x": 52,
     "y": 90
   },
-  "highlight": [
-    "kneeL",
-    "kneeR"
-  ],
+  "static": true,
+  "idle": "bounce",
   "frames": [
-    {"duration":700,"label":"Guard: angled, knees soft, weight 50/50","pose":{"torso":176,"head":176,"upperArmL":40,"forearmL":150,"upperArmR":25,"forearmR":160,"thighL":14,"shinL":-6,"footL":90,"thighR":-20,"shinR":-18,"footR":72}},
-    {"duration":350,"label":"Light on the balls of the feet: weight forward","pose":{"torso":174,"thighL":20,"shinL":-10,"thighR":-24,"shinR":-22,"footR":65,"upperArmL":44,"forearmL":148}},
-    {"duration":350,"label":"Weight back, ready to kick","pose":{"torso":178,"head":178,"thighL":8,"shinL":-2,"thighR":-16,"shinR":-14,"footR":78,"upperArmL":36,"forearmL":152}}
+    {"duration":1400,"label":"Guard: angled, knees soft, weight 50/50","highlight":[],"pose":{"torso":176,"head":176,"upperArmL":40,"forearmL":150,"upperArmR":25,"forearmR":160,"thighL":14,"shinL":-6,"footL":90,"thighR":-20,"shinR":-18,"footR":72}}
   ]
 }
