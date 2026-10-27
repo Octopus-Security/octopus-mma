@@ -1,0 +1,29 @@
+{
+  "_about": "Snapshot of the equipment ids in octopus-health content/equipment/catalogue.json (version 1). health is the source of truth; update this file when it changes. test/equipment-ids.test.js fails if the stick-figure holds drift from it.",
+  "version": 1,
+  "ids": [
+    "wall",
+    "chair",
+    "bar",
+    "dip-bars",
+    "handles",
+    "parallettes",
+    "rings",
+    "captains-chair",
+    "power-tower",
+    "ab-roller",
+    "jump-rope",
+    "resistance-bands",
+    "push-up-board",
+    "ball",
+    "dumbbell",
+    "barbell",
+    "kettlebell",
+    "weight-bench",
+    "cable-machine",
+    "machine",
+    "cardio-machine",
+    "bag",
+    "pads"
+  ]
+}
