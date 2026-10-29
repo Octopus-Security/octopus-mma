@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "title": "Switch Kick",
+  "view": "side",
+  "frames": [
+    {"duration":450,"label":"Guard","highlight":[],"pins":["ankleL","ankleR"],"pose":{"torso":180,"head":177,"upperArmL":40,"forearmL":174,"upperArmR":30,"forearmR":174,"thighL":14,"shinL":-2,"footL":80,"thighR":-20,"shinR":-22,"footR":64,"root":{"x":51.86,"y":50.61}}},
+    {"duration":200,"label":"Switch: a small hop, lead foot back, rear foot forward","highlight":[],"anchor":{"joint":"toeR","x":56.89,"y":91.22},"pose":{"torso":180,"head":177,"upperArmL":40,"forearmL":174,"upperArmR":30,"forearmR":174,"thighL":-20,"shinL":-22,"footL":64,"thighR":14,"shinR":-2,"footR":80}},
+    {"duration":260,"label":"Kick off the switch: the left leg swings through to the body","highlight":["hipL","kneeL","ankleL"],"anchor":{"joint":"toeR","x":56.89,"y":91.22},"pose":{"torso":212,"head":194,"thighR":4,"shinR":0,"footR":52,"thighL":82,"shinL":80,"footL":102,"upperArmL":-44,"forearmL":-24,"upperArmR":52,"forearmR":182}},
+    {"duration":300,"label":"Return the leg","highlight":[],"anchor":{"joint":"toeR","x":56.89,"y":91.22},"pose":{"torso":184,"head":179,"thighR":10,"shinR":-2,"footR":66,"thighL":16,"shinL":-40,"footL":40,"upperArmL":30,"forearmL":160,"upperArmR":40,"forearmR":174}},
+    {"duration":380,"label":"Land, then switch back to the orthodox guard","highlight":[],"anchor":{"joint":"toeR","x":56.89,"y":91.22},"pins":["ankleL","ankleR"],"pose":{"torso":180,"head":177,"upperArmL":40,"forearmL":174,"upperArmR":30,"forearmR":174,"thighL":-20,"shinL":-22,"footL":64,"thighR":14,"shinR":-2,"footR":80}}
+  ]
+}
