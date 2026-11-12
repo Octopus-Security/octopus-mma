@@ -34,3 +34,10 @@ body {
     @apply flex-shrink-0 w-7 h-7 rounded-full bg-brand-red/20 border border-brand-red/40 text-brand-red text-xs font-bold flex items-center justify-center;
   }
 }
+
+/* Layout & text rules (octopus-kit docs/layout.md rules 1-7): only what this app did not already have. */
+html { background-color: #0d0d0d; }
+body { overflow-x: clip; overflow-wrap: break-word; hyphens: manual; min-height: 100vh; min-height: 100dvh; }
+code, kbd { overflow-wrap: anywhere; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+img, video, svg { max-width: 100%; }
+img, video { height: auto; }
